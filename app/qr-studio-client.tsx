@@ -247,8 +247,9 @@ async function copyQrImage() {
 
   return (
     <div className="wrap">
-      <div className="card">
-        <div className="grid2">
+      <div className="container">
+        <div className="card soft">
+          <div className="grid2">
           {/* Left */}
           <div className="card" style={{ padding: 16 }}>
             <div className="top">
@@ -395,6 +396,7 @@ async function copyQrImage() {
             </div>
 
             <div className="hint">No server storage. Everything stays on your device unless you share.</div>
+          </div>
           </div>
         </div>
       </div>
