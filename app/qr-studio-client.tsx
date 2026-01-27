@@ -25,7 +25,7 @@ const sp = useSearchParams();
 
   const [label, setLabel] = useState("My QR");
   const [content, setContent] = useState("");
-  const [size, setSize] = useState(280);
+  const [size, setSize] = useState(220);
 
   const [err, setErr] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
