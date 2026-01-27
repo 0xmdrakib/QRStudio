@@ -62,13 +62,6 @@ const sp = useSearchParams();
     return { cls: "pill ok", text: `${trimmed.length} chars` };
   }, [canMake, trimmed.length, tooLong]);
 
-  function shareUrl() {
-    const u = new URL(window.location.origin);
-    if (trimmed) u.searchParams.set("text", trimmed);
-    if (label.trim()) u.searchParams.set("label", label.trim());
-    return u.toString();
-  }
-
   async function showToast(msg: string) {
     setToast(msg);
     setTimeout(() => setToast(null), 1200);
@@ -221,17 +214,10 @@ async function copyQrImage() {
     setErr(null);
     if (!canMake) return;
 
-    const embed =
-      isProbablyUrl(trimmed) ? trimmed : shareUrl();
-
-    const text =
-      `QR Studio\n` +
-      `${label.trim() ? label.trim() + "\n" : ""}` +
-      `${trimmed.length > 120 ? trimmed.slice(0, 120) + "…" : trimmed}`;
-
+    // Keep sharing consistent: always share the app with a single, fixed caption.
     await sdk.actions.composeCast({
-      text,
-      embeds: [embed],
+      text: "I just used QR Studio",
+      embeds: ["https://qr-studio-plum.vercel.app/"],
     });
   }
 
