@@ -19,13 +19,23 @@
 }
 
 *{ box-sizing:border-box; }
-html,body{ height:100%; }
-body{
-  margin:0;
+
+/*
+  Keep the background consistent even when the document becomes taller than the viewport.
+  Putting the background on the root element avoids the common “white/gray band” effect
+  that can appear when body is constrained by height rules in some webviews.
+*/
+html,body{ min-height:100%; }
+html{
   background:
     radial-gradient(900px 520px at 15% 0%, rgba(59,130,246,.13), transparent 55%),
     radial-gradient(800px 520px at 90% 10%, rgba(34,197,94,.09), transparent 52%),
     var(--bg);
+}
+body{
+  margin:0;
+  min-height:100vh;
+  background:transparent;
   color:var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
@@ -36,7 +46,7 @@ a{ color:inherit; text-decoration:none; }
 ::selection{ background:rgba(59,130,246,.22); }
 
 .wrap{
-  min-height:100%;
+  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
