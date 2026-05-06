@@ -71,38 +71,6 @@ npm run build
 npm run start
 ```
 
-## Project structure
-
-```txt
-QRStudio-main/
-├── app/
-│   ├── .well-known/farcaster.json/route.ts  # Serves the Mini App manifest
-│   ├── api/qr/route.ts                      # Server-side PNG QR generator
-│   ├── save/page.tsx                        # Save/share fallback route
-│   ├── save/save-client.tsx                 # Client logic for QR image save/share flow
-│   ├── ClientReady.tsx                      # SDK ready signal for embedded clients
-│   ├── globals.css                          # App styling system
-│   ├── layout.tsx                           # Metadata and root layout
-│   ├── page.tsx                             # Main app route wrapper
-│   ├── qr-studio-client.tsx                 # Main QR Studio UI and interaction logic
-│   ├── icon.png                             # Tab icon
-│   ├── icon.png                             # Tab icon
-│   └── apple-icon.png                       # iPhone icon  
-├── public/
-│   ├── .well-known/farcaster.json           # Mini App manifest and account association
-│   ├── embed.png                            # Mini App embed image
-│   ├── hero.png                             # Hero/social preview image
-│   ├── icon.png                             # App icon
-│   ├── logo.png                             # App logo
-│   ├── og.png                               # Open Graph image
-│   ├── screen1.png                          # Screenshot asset
-│   └── splash.png                           # Mini App splash image
-├── next.config.mjs                          # Next.js standalone output config
-├── package.json                             # Scripts and dependencies
-├── tsconfig.json                            # TypeScript configuration
-└── LICENSE                                  # MIT license
-```
-
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
